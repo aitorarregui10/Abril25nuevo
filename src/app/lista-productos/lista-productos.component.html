@@ -5,7 +5,7 @@
     @for(item of productos; track item.product_id){
         <ul>
             <li>{{item.product_id}} {{item.nombreProducto}} {{item.precioUnitario}} {{item.unidadesStock}} {{item.categoria}}</li>
-            <button (click)="eliminarProducto(item.product_id)">Afueraaaa</button>
+            <button (click)="eliminarProducto(item.product_id)">Eliminar este producto</button>
         </ul>
     }
     @empty {

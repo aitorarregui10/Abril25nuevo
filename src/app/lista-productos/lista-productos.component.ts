@@ -27,6 +27,7 @@ export class ListaProductosComponent implements OnInit{
 
   ngOnInit(): void {
     this.obtenerProductos();
+    this.altaProducto();
   }
 
   obtenerProductos(): void {

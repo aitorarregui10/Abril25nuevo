@@ -9,10 +9,12 @@ export interface Producto {
   unidadesStock: number;
   categoria: number;
 }
- 
+
+/* 
 export const entorno = {
   HOST :'http://localhost:8080'
 }
+*/
  
 @Injectable({
   providedIn: 'root'
