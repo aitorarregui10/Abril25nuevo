@@ -37,4 +37,8 @@ export class ProductoService {
     return this.http.delete<void>(`${this.url}/${product_id}`);
   }
 
+  modificarProducto(producto: Producto): Observable<Producto> {
+    return this.http.put<Producto>(`${this.url}/${producto.product_id}`, producto);
+  }
+
 }

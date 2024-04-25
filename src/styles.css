@@ -85,3 +85,46 @@
     border-radius: 3px;
     cursor: pointer;
   }
+
+  .modificar-producto-form {
+    background-color: #f0f0f0;
+    border: 2px solid #006400;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999; /* Para asegurarse de que esté encima de otros elementos */
+  }
+  
+  .modificar-producto-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #006400;
+  }
+  
+  .modificar-producto-form input[type="text"],
+  .modificar-producto-form input[type="number"] {
+    width: calc(100% - 12px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .modificar-producto-form button[type="submit"] {
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .modificar-producto-form button[type="submit"]:hover {
+    background-color: #004c00;
+  }

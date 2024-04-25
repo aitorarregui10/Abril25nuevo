@@ -22,8 +22,14 @@ export class ListaProductosComponent implements OnInit{
   
   productos: Producto[] = [];
   nuevoProducto: Producto = { product_id: 0, nombreProducto: '', precioUnitario: 0, unidadesStock: 0, categoria: 0};
+  productoSeleccionado: Producto | null = null;
 
   constructor(private servicio: ProductoService) {}
+
+    mostrarProductos: boolean = false;
+  listar() {
+    this.mostrarProductos = !this.mostrarProductos;
+  }
 
   ngOnInit(): void {
     this.obtenerProductos();
@@ -47,9 +53,15 @@ export class ListaProductosComponent implements OnInit{
       window.location.reload(); 
     });
   }
+  seleccionarProducto(producto: Producto): void {
+    this.productoSeleccionado = { ...producto };
+  }
 
-  mostrarProductos: boolean = false;
-  listar() {
-    this.mostrarProductos = !this.mostrarProductos;
+  modificarProducto(): void {
+    if (this.productoSeleccionado) {
+      this.servicio.modificarProducto(this.productoSeleccionado).subscribe(() => {
+        window.location.reload(); 
+      });
+    }
   }
 }
