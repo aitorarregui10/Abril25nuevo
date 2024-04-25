@@ -1,0 +1,40 @@
+<h1>Lista de productos</h1>
+
+<button class="button" (click)="listar()">Traer todos los productos</button> 
+<div *ngIf="mostrarProductos">
+    @for(item of productos; track item.product_id){
+        <ul>
+            <li>{{item.product_id}} {{item.nombreProducto}} {{item.precioUnitario}} {{item.unidadesStock}} {{item.categoria}}</li>
+            <button (click)="eliminarProducto(item.product_id)">Afueraaaa</button>
+        </ul>
+    }
+    @empty {
+        <p>No hay datos</p>
+    }
+</div>
+<div>
+    <h2>Crear Nuevo Producto</h2>
+    <form (submit)="altaProducto()">
+        <div>
+            <label for="product_id">Id del Producto</label>
+            <input type="text" id="product_id" [(ngModel)]="nuevoProducto.product_id" name="product_id" required>
+          </div>
+      <div>
+        <label for="nombreProducto">Nombre del Producto:</label>
+        <input type="text" id="nombreProducto" [(ngModel)]="nuevoProducto.nombreProducto" name="nombreProducto" required>
+      </div>
+      <div>
+        <label for="precioUnitario">Precio Unitario:</label>
+        <input type="number" id="precioUnitario" [(ngModel)]="nuevoProducto.precioUnitario" name="precioUnitario" required>
+      </div>
+      <div>
+        <label for="unidadesStock">Unidades en Stock:</label>
+        <input type="number" id="unidadesStock" [(ngModel)]="nuevoProducto.unidadesStock" name="unidadesStock" required>
+      </div>
+      <div>
+        <label for="categoria">Categoría:</label>
+        <input type="number" id="categoria" [(ngModel)]="nuevoProducto.categoria" name="categoria" required>
+      </div>
+      <button type="submit">Agregar Producto</button>
+    </form>
+  </div>
